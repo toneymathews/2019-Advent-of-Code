@@ -1,5 +1,5 @@
 def calculate_fuel(mass)
-  ((mass/3).floor - 2)
+  recursive_fuel = ((mass/3).floor - 2) > 0 ? ((mass/3).floor - 2) + calculate_fuel((mass/3).floor - 2) : 0
 end
 def get_input
   input = gets("\t\n").chomp
