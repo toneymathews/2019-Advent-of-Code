@@ -10,7 +10,7 @@ def process_opcode(array, noun, verb)
 			array[array[i+3]] = array[array[i+1]] * array[array[i+2]]
 		elsif array[i] == 99
       if array[0] == 19690720
-        puts "condition met"
+        puts "condition met for #{noun} and #{verb}"
         return array[0]
       else
         return 0
@@ -31,16 +31,12 @@ end
 def find_noun_and_verb(array)
   noun = 0
   verb = 0
-  array_backup = array
-  puts "length of array is #{array_backup.length}"
+  array_backup = [].replace(array)
   a = array
-  puts a[0]
-  while noun <= 2
+  while noun <= 99
     verb = 0
-    while verb <= 2
-      #array = array_backup
-      puts a[10]
-      puts noun.to_s + " some " +  verb.to_s + " first element " + array[0].to_s + "backup" + a[0].to_s
+    while verb <= 99
+      array = [].replace(array_backup)
       if process_opcode(array, noun, verb) != 0
         puts "value is #{100 * noun + verb}"
       end
