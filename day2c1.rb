@@ -9,7 +9,7 @@ def process_opcode(array)
 		elsif array[i] == 2
 			array[array[i+3]] = array[array[i+1]] * array[array[i+2]]
 		elsif array[i] == 99
-			puts "element is #{array[0]}"
+			#puts "element is #{array[0]}"
 			return array[0]
 		end
 		i = i + 4
